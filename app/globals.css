@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Estedad";
+  src: url("https://cdn.jsdelivr.net/gh/aminabedi68/Estedad@8.5/fonts/Estedad%5Bwght%5D.woff2")
+    format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --muted: #f4f4f5;
+  --border: #e4e4e7;
+  --link: #2563eb;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
+  --muted: #1f1f23;
+  --border: #3f3f46;
+  --link: #60a5fa;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+}
+
+.dark { color-scheme: dark; }
+
+/* Reader prose */
+.prose-fa { line-height: 2; word-wrap: break-word; }
+.prose-fa > * + * { margin-top: 1em; }
+.prose-fa h1, .prose-fa h2, .prose-fa h3, .prose-fa h4, .prose-fa h5, .prose-fa h6 {
+  font-weight: 700; line-height: 1.6; margin-top: 1.6em;
+}
+.prose-fa h1 { font-size: 1.9em; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+.prose-fa h2 { font-size: 1.5em; border-bottom: 1px solid var(--border); padding-bottom: 0.2em; }
+.prose-fa h3 { font-size: 1.25em; }
+.prose-fa h4 { font-size: 1.1em; }
+.prose-fa blockquote {
+  border-inline-start: 4px solid var(--link);
+  padding-inline-start: 1em;
+  padding-block: 0.1em;
+  background: var(--muted);
+  border-radius: 0.25rem;
+  opacity: 0.95;
+}
+.prose-fa ul, .prose-fa ol { padding-inline-start: 1.8em; }
+.prose-fa ul { list-style: disc; }
+.prose-fa ol { list-style: decimal; }
+.prose-fa li > ul, .prose-fa li > ol { margin-top: 0.3em; }
+.prose-fa a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+.prose-fa hr { border: 0; border-top: 1px solid var(--border); margin-block: 2em; }
+.prose-fa img { max-width: 100%; height: auto; border-radius: 0.5rem; }
+.prose-fa table { display: block; overflow-x: auto; border-collapse: collapse; width: max-content; max-width: 100%; }
+.prose-fa th, .prose-fa td { border: 1px solid var(--border); padding: 0.4em 0.8em; text-align: start; }
+.prose-fa th { background: var(--muted); font-weight: 700; }
+.prose-fa code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em; background: var(--muted); padding: 0.15em 0.4em; border-radius: 0.3rem;
+  unicode-bidi: isolate;
+}
+.prose-fa pre {
+  direction: ltr; text-align: left; overflow-x: auto; background: var(--muted);
+  padding: 1em; border-radius: 0.5rem; line-height: 1.6; border: 1px solid var(--border);
+}
+.prose-fa pre code { background: transparent; padding: 0; font-size: 0.9em; }
